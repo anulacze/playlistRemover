@@ -8,8 +8,10 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path='/' element={<Playlists />} />
-          <Route path='/playlist/:playlistID' element={<PlaylistDetails />} />
+          <Route path='/playlistRemover'>
+            <Route path='' element={<Playlists />} />
+            <Route path='playlist/:playlistID' element={<PlaylistDetails />} />
+          </Route>
         </Routes>
       </div>
     </Router>
