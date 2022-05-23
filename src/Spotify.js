@@ -53,13 +53,12 @@ export const fetchPlaylists = async (page) => {
 }
 
 export const removePlaylist = (id) => {
-        // return fetch(`https://api.spotify.com/v1/playlists/${id}/followers`, {
-        // method: 'DELETE',
-        // headers: {
-        //     Authorization: `Bearer ${getAccessToken()}`
-        // }
-    // });
-    return Promise.resolve();
+    return fetch(`https://api.spotify.com/v1/playlists/${id}/followers`, {
+        method: 'DELETE',
+        headers: {
+            Authorization: `Bearer ${getAccessToken()}`
+        }
+    });
 }
 
 export const fetchPlaylistDetails = async (id) => {
