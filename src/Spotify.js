@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 const client_id = 'e69b238f40cf4abd8af17c89d5b764bb';
 const scope = 'playlist-modify-public';
-const redirect_uri = 'https://anulacze.github.io/playlistRemover/';
+const redirect_uri = 'http://localhost:3000/';
 let token = localStorage.getItem('Token');
 
 export const getAccessToken = () => {
@@ -22,7 +22,6 @@ export const getAccessToken = () => {
         url += '&client_id=' + encodeURIComponent(client_id);
         url += '&scope=' + encodeURIComponent(scope);
         url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
-        //url += '&state=' + encodeURIComponent(state);
         
         window.location.href = url;
     }
@@ -48,7 +47,6 @@ export const fetchPlaylists = async (page) => {
         }
     });
     const data = await response.json();
-    console.log(page * 10);
     return data;
 }
 
